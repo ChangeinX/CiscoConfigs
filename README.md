@@ -19,7 +19,7 @@ ip access-list extended PACKET_FILTER
 
 	! sourced from (PDC_ASE-Link)
   
-	permit ip host 192.168.66.1 any
+	permit ip host <ip> any
   
 	! heading to (PDC_ASE-Uplink to Branch)
   

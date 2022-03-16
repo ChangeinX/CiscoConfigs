@@ -1,4 +1,4 @@
-# Configure Devices to Send Syslog Data to Orion for EIGRP changes
+# Configure Devices to Send Syslog Data to Orion for EIGRP Changes
 ### Variables
 ASE link
 

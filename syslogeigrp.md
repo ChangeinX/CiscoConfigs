@@ -1,4 +1,4 @@
-# Configure IP-SLA to test VoIP Quality
+# Configure Devices to Send Syslog Data to Orion for EIGRP changes
 ### Variables
 ASE link
 

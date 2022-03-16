@@ -1,12 +1,12 @@
 # Configure Devices to Send Syslog Data to Orion for EIGRP Changes
 ### Variables
 ASE link
-
+community_name
 EIGRP broadcast address
-
-Access-list details
-
+ip access-list standard 10
+ip broadcast
 LOCATION_NAME
+Orion IP
 
 **Confirm standard seq. 10 does not already exist in access-list**
 ```
@@ -21,7 +21,7 @@ sh ip access-list
 sh int gi0/0/0
 ```
 
-**Confirm loopback eigrp broadcast doesn't already exist**
+**Confirm loopback EIGRP broadcast doesn't already exist**
 
 ```
 sh run | section eigrp
@@ -35,8 +35,8 @@ conf t
 router eigrp 1
 
 !loopback
-
-network 172.16.2.40 0.0.0.0
+! local network ip to broadcast
+network <ip broadcast> 0.0.0.0
 
 end
 
@@ -49,8 +49,8 @@ wr
 conf t
 
 ip access-list standard 10
-
-10 permit 10.2.2.55
+! To ORION ip
+10 permit <ip>
 
 end
 
@@ -62,13 +62,13 @@ wr
 ```
 conf t
 
-no snmp-server community BlueVine RO
+no snmp-server community <community_name> RO
 
-snmp-server community BlueVine RW 10
+snmp-server community <community_name> RW 10
 
 snmp-server location <LOCATION_NAME>
 
-snmp-server host 10.2.2.55 BlueVine
+snmp-server host <Orion IP> <community name>
 
 snmp-server enable traps syslog
 
@@ -78,16 +78,16 @@ wr
 
 conf t
 
-!displays hostname rather than ip address
+! displays hostname rather than ip address
 
 logging origin-id hostname
 
-!source is ASE link
+! source is ASE link
 
 logging source-interface Gi0/0/0
 
 !logging host is Orion
-logging host 10.2.2.55
+logging host <Orion IP>
 
 end
 

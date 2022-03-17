@@ -8,6 +8,17 @@
 
 ## Setting Up EPC Configuration CISCO IOS
 
+**Variables**
+PACKET_FILTER (can be any name)
+
+PDC_ASE-Link
+
+ip
+
+CAPTURE
+
+CAP-POINT
+
 
 **Enter Global Configuration Mode**
 ```

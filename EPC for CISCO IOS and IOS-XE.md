@@ -76,6 +76,8 @@ monitor capture point associate CAP-POINT CAPTURE
 ```
 ! Start
 monitor capture point start CAP-POINT
+```
+```
 ! Stop
 monitor capture point stop CAP-POINT
 ! Export
@@ -88,6 +90,8 @@ monitor capture buffer CAPTURE export tftp://10.1.10.101/CAPTURE.pcap
 ! Privelege Exec Mode 
 
 ! interface is PDC_ASE Uplink
+```
+```
   
 monitor capture CAP interface GigabitEthernet0/0/0 both
   
@@ -100,6 +104,8 @@ monitor capture CAP match ipv4 protocol tcp any any
 ! Start Capture
   
 monitor capture CAP start
+```
+```
 
 ! Stop Capture
   

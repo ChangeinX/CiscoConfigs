@@ -40,11 +40,13 @@ ip access-list extended PACKET_FILTER
   
 	permit ip any host <ip>
 ```
-  
+``` 
 ! Return to privileged exec mode
-
+```
+```
 exit
-!
+```
+```
 
 ! Note CISCO can't keep up with where to define bytes 
 
@@ -55,7 +57,8 @@ exit
 ! linear goes up to and circular drops oldest packet and adds to
 
 ! capture is stored in DRAM
-
+```
+```
 monitor capture buffer CAPTURE size 512 max-size 512 linear
 
 monitor capture buffer CAPTURE filter access-list PACKET_FILTER

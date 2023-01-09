@@ -23,8 +23,12 @@ CAP-POINT
 **Enter Global Configuration Mode**
 ```
 configure terminal
+```
+```
 
 ! Access List Filter Goes to Buffer
+```
+```
 
 ip access-list extended PACKET_FILTER
 
@@ -35,6 +39,7 @@ ip access-list extended PACKET_FILTER
 	! heading to (PDC_ASE-Uplink to Branch)
   
 	permit ip any host <ip>
+```
   
 ! Return to privileged exec mode
 
